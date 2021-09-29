@@ -3,7 +3,6 @@ FROM public.ecr.aws/bitnami/golang:1.17 as builder
 WORKDIR /app
 
 COPY . .
-RUN go mod download
 RUN go mod tidy
 RUN go build -o web-server .
 
